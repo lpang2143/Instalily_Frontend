@@ -4,6 +4,8 @@ import ChatWindow from "./components/ChatWindow";
 
 function App() {
 
+  const [data, setData] = useState(null)
+
   return (
     <div className="App">
       <div className="heading">
