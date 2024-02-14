@@ -6,13 +6,16 @@ export const getAIMessage = async (userQuery) => {
   }
   
   try {
-    const response = await fetch('/query', {
+    // console.log('here!')
+    const response = await fetch('https://instalily-backend-46779b2cb5ab.herokuapp.com/query', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(queryData)
     });
+
+    // console.log('got response')
     
     if (!response.ok) {
       throw new Error('HTTP error! Status: ${response.status}');
@@ -28,6 +31,10 @@ export const getAIMessage = async (userQuery) => {
     }
   } catch (error){
     console.error('Error fetching data:', error)
-    return null
+    const message = {
+      role: "assistant",
+      content: "Sorry, I can't connect to the backend right now."
+    }
+    return message
   }
 };

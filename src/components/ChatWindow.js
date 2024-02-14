@@ -24,6 +24,7 @@ function ChatWindow() {
   }, [messages]);
 
   const handleSend = async (input) => {
+    // console.log('preparing to send!')
     if (input.trim() !== "") {
       // Set user message
       setMessages(prevMessages => [...prevMessages, { role: "user", content: input }]);

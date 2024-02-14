@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "Minimal Manifest",
+    "version": "1.0.0",
+    "description": "A basic example extension with only required keys",
+    "action": {
+        "default_popup": "js/index.html",
+        "default_title": "React Chrome Extension"
+    },
+    "permissions": [
+        "sidePanel",
+        "https://instalily-backend-46779b2cb5ab.herokuapp.com/",
+        "https://instalily-backend-46779b2cb5ab.herokuapp.com/query"
+    ],
+    "side_panel": {
+        "default_path": "index.js"
+    }
+}
