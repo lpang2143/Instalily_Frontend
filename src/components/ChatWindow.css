@@ -109,3 +109,7 @@
   cursor: pointer;
   font-size: 13px;
 }
+
+.feedback-icons {
+  padding: 5px
+}
