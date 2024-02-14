@@ -1,8 +1,18 @@
 export const getAIMessage = async (userQuery) => {
   let responseData;
 
+  const queryData = {
+    query: userQuery
+  }
+  
   try {
-    const response = await fetch('/query');
+    const response = await fetch('/query', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(queryData)
+    });
     
     if (!response.ok) {
       throw new Error('HTTP error! Status: ${response.status}');
